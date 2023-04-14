@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gitbook-plugin-theme-official": "^2.1.1",
     "graceful-fs": "^4.2.0"
   }
 }
