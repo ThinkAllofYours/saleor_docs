@@ -1,0 +1,513 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CheckoutApp · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Checkout과 같은 외부 Saleor 앱에서 결제 프로세스가 처리되는 흐름에 대해 설명합니다">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+
+    
+    <link rel="next" href="Transaction.html" />
+    
+    
+    <link rel="prev" href="PaymentApp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="gb-page-wrapper">
+    <header class="gb-page-header">
+        <div class="container">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+            <a href="../.." class="logo">
+                <img src="../../gitbook/images/logo/128.png">
+                <h1></h1>
+            </a>
+
+            
+
+            
+                
+                <a href="Transaction.html" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-right"></i>
+                </a>
+                
+                
+                <a href="PaymentApp.html" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-left"></i>
+                </a>
+                
+            
+        
+        </div>
+    </header>
+
+    <div class="gb-page-body">
+        <div class="gb-page-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        
+
+
+
+    
+    <div class="panel panel-default">
+        
+
+        <div class="list-group">
+            
+    
+        
+        <a href="../../" class="list-group-item ">
+        
+
+            
+
+            
+
+            Introduction
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Saleor Core
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="../ProjectStructure.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Project Structure
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Introduction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Payment
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="PaymentApp.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            PaymentApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="CheckoutApp.html" class="list-group-item active">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            CheckoutApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Transaction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Transaction
+
+        
+        </a>
+        
+
+        
+    
+
+        
+    
+
+        
+    
+        
+        <a href="../../SaleorDashboard/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Dashboard
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../../SaleorFrontend/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Frontend
+
+        
+        </a>
+        
+
+        
+    
+
+        </div>
+    </div>
+    
+
+
+
+                    </div>
+                    <div class="col-md-9">
+                        
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                            
+                            <div class="gb-markdown book-page-inner">
+                                <h2 id="checkout-&#xC571;&#xC744;-&#xC0AC;&#xC6A9;&#xD55C;-&#xACB0;&#xC81C;-&#xCC98;&#xB9AC;">checkout &#xC571;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACB0;&#xC81C; &#xCC98;&#xB9AC;</h2>
+<p>&#xC774; &#xC139;&#xC158;&#xC5D0;&#xC11C;&#xB294; Checkout&#xACFC; &#xAC19;&#xC740; &#xC678;&#xBD80; Saleor &#xC571;&#xC5D0;&#xC11C; &#xACB0;&#xC81C; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xAC00; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xD750;&#xB984;&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;, Saleor&#xB294; Saleor &#xC571;&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xB41C; &#xACB0;&#xC81C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xACB0;&#xACFC;&#xB97C; &#xBC1B;&#xAE30;&#xB97C; &#xAE30;&#xB300;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC740; &#xC8FC;&#xBB38;&#xC774;&#xB098; &#xCCB4;&#xD06C;&#xC544;&#xC6C3;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xACB0;&#xC81C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xB97C; &#xC800;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="transactioncreate-&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740;-&#xB2E4;&#xC74C;-&#xC778;&#xC218;&#xB97C;-&#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;">transactionCreate &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; &#xB2E4;&#xC74C; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</h5>
+<ul>
+<li>id: &#xCCB4;&#xD06C;&#xC544;&#xC6C3;&#xC774;&#xB098; &#xC8FC;&#xBB38;&#xC758; ID&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transaction: &#xC0C8;&#xB85C;&#xC6B4; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xC785;&#xB825; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transactionEvent: &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC815;&#xC758;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xD604;&#xC7AC; &#xC0C1;&#xD0DC;&#xC5D0; &#xB300;&#xD55C; &#xB9E5;&#xB77D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; transactionCreate &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<p>&#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC774; &#xC2B9;&#xC778;&#xB418;&#xC5C8;&#xACE0;, &#xC2E0;&#xC6A9;&#xCE74;&#xB4DC;&#xB85C; &#xACB0;&#xC81C;&#xAC00; &#xC774;&#xB8E8;&#xC5B4;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;. Saleor&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xB294; &#xC561;&#xC158;&#xC740; CANCEL&#xACFC; CHARGE&#xC785;&#xB2C8;&#xB2E4;. &#xC2B9;&#xC778;&#xB41C; &#xAE08;&#xC561;&#xC740; $99&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-graphql">mutation {
+  transactionCreate(
+    id: &quot;Q2hlY2tvdXQ6MWQzNmU5YzctYWEwYS00NzM5LTk0MGQtNzdjNmU4Mjc5YmQ0&quot;
+    transaction: {
+      status: &quot;Authorized&quot;
+      type: &quot;Credit card&quot;
+      reference: &quot;PSP-ref123&quot;
+      availableActions: [CANCEL, CHARGE]
+      amountAuthorized: { currency: &quot;USD&quot;, amount: 99 }
+    }
+    transactionEvent: {
+      status: SUCCESS
+      name: &quot;Authorized credit card&quot;
+      reference: &quot;PSP-ref123&quot;
+    }
+  ) {
+    transaction {
+      id
+    }
+  }
+}
+</code></pre>
+<p>The response would look like this:</p>
+<pre><code class="lang-graphql">{
+  &quot;data&quot;: {
+    &quot;transactionCreate&quot;: {
+      &quot;transaction&quot;: {
+        &quot;id&quot;: &quot;VHJhbnNhY3Rpb25JdGVtOjE=&quot;
+      }
+    }
+  },
+  &quot;extensions&quot;: {
+    &quot;cost&quot;: {
+      &quot;requestedQueryCost&quot;: 0,
+      &quot;maximumAvailable&quot;: 50000
+    }
+  }
+}
+</code></pre>
+<h4 id="&#xD2B8;&#xB79C;&#xC7AD;&#xC158;-&#xC5C5;&#xB370;&#xC774;&#xD2B8;">&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC5C5;&#xB370;&#xC774;&#xD2B8;</h4>
+<p>transactionUpdate &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li>id: &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; ID&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transaction: &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xAC1D;&#xCCB4;&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC785;&#xB825; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transactionEvent: &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC815;&#xC758;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xD604;&#xC7AC; &#xC0C1;&#xD0DC;&#xC5D0; &#xB300;&#xD55C; &#xB9E5;&#xB77D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<blockquote>
+<p>transactionUpdate&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC18C;&#xC720;&#xC790;&#xB9CC; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC18C;&#xC720;&#xC790;&#xB294; &#xD574;&#xB2F9; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xC0DD;&#xC131;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xB610;&#xB294; &#xC571;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC2DC;&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xAE30; &#xC704;&#xD574; transactionUpdate &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC561;&#xC158;&#xC740; REFUND&#xC785;&#xB2C8;&#xB2E4;. &#xC778;&#xC99D;&#xB41C; &#xC790;&#xAE08;&#xC774; &#xCCAD;&#xAD6C;&#xB418;&#xC5C8;&#xC73C;&#xBBC0;&#xB85C; amountAuthorized&#xB294; $0&#xC785;&#xB2C8;&#xB2E4;. amountCharged&#xB294; $99&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-graphql">mutation {
+  transactionUpdate(
+    id: &quot;VHJhbnNhY3Rpb25JdGVtOjE=&quot;
+    transaction: {
+      name: &quot;Credit card&quot;
+      message: &quot;Authorized&quot;
+      pspReference: &quot;PSP-ref123&quot;
+      availableActions: [REFUND]
+      amountAuthorized: { currency: &quot;USD&quot;, amount: 0 }
+      amountCharged: { currency: &quot;USD&quot;, amount: 99 }
+    }
+    transactionEvent: {
+      message: &quot;Payment charged&quot;
+      pspReference: &quot;PSP-ref123.charge&quot;
+    }
+  ) {
+    transaction {
+      id
+    }
+  }
+}
+</code></pre>
+<p>The response would look like this:</p>
+<pre><code class="lang-graphql">{
+  &quot;data&quot;: {
+    &quot;transactionUpdate&quot;: {
+      &quot;transaction&quot;: {
+        &quot;id&quot;: &quot;VHJhbnNhY3Rpb25JdGVtOjE=&quot;
+      }
+    }
+  },
+  &quot;extensions&quot;: {
+    &quot;cost&quot;: {
+      &quot;requestedQueryCost&quot;: 0,
+      &quot;maximumAvailable&quot;: 50000
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xC911;&#xC5D0;&#xB294; &#xC0C8; &#xC0C1;&#xD0DC;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xC790;&#xAE08;&#xC774; &#xC774;&#xC804; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xCC28;&#xAC10;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. authorizedAmount&#xAC00; 100 USD&#xC778; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xAC00;&#xC815;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;. authorizedAmount&#xB97C; chargedAmount&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB824;&#xBA74; authorizedAmount&#xB97C; 0&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-graphql">mutation {
+  transactionUpdate(
+    id: &quot;VHJhbnNhY3Rpb25JdGVtOjE=&quot;
+    transaction: {
+      status: &quot;Charged&quot;
+      availableActions: [REFUND]
+      amountAuthorized: { currency: &quot;USD&quot;, amount: 0 }
+      amountCharged: { currency: &quot;USD&quot;, amount: 100 }
+    }
+    transactionEvent: {
+      status: SUCCESS
+      name: &quot;Charged credit card&quot;
+      reference: &quot;PSP-ref123.charge&quot;
+    }
+  ) {
+    transaction {
+      id
+    }
+  }
+}
+</code></pre>
+</blockquote>
+
+                            </div>
+                            
+                        
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="gb-page-footer">
+        <div class="container">
+            <ul class="menu">
+                <li class="pull-right">
+                    <span class="service-info">Copyright GitBook 2023</span>
+                </li>
+                <li>
+                    <a href="#">Return to the top</a>
+                </li>
+                <li>
+                    <a href="#">Updated Apr 20th 23</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script src="../../gitbook/gitbook.js"></script>
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"description":"Checkout과 같은 외부 Saleor 앱에서 결제 프로세스가 처리되는 흐름에 대해 설명합니다","title":"CheckoutApp","level":"1.2.2.2","depth":3,"next":{"title":"Transaction","level":"1.2.2.3","depth":3,"path":"SaleorCore/Payment/Transaction.md","ref":"SaleorCore/Payment/Transaction.md","articles":[]},"previous":{"title":"PaymentApp","level":"1.2.2.1","depth":3,"path":"SaleorCore/Payment/PaymentApp.md","ref":"SaleorCore/Payment/PaymentApp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-official"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-official":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SaleorCore/Payment/CheckoutApp.md","mtime":"2023-04-20T06:41:30.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-20T09:04:04.131Z"},"basePath":"../..","book":{"language":""}});
+})();
+</script>
+
+        
+    </body>
+</html>
+

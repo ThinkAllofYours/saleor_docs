@@ -1,0 +1,483 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transaction · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="ransactionEventReport는 새로운 트랜잭션 이벤트를 보고하는 데 사용됩니다. 새롭게 생성된 이벤트는 트랜잭션 금액을 재계산하는 데 사용됩니다. 이 뮤테이션은 요청된 작업을 비동기적으로 처리하거나 결제 제공자 측에서 발생한 변경 사항을 보고하는 경우에 사용해야 합니다.">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+
+    
+    <link rel="next" href="../../SaleorDashboard/" />
+    
+    
+    <link rel="prev" href="CheckoutApp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="gb-page-wrapper">
+    <header class="gb-page-header">
+        <div class="container">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+            <a href="../.." class="logo">
+                <img src="../../gitbook/images/logo/128.png">
+                <h1></h1>
+            </a>
+
+            
+
+            
+                
+                <a href="../../SaleorDashboard/" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-right"></i>
+                </a>
+                
+                
+                <a href="CheckoutApp.html" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-left"></i>
+                </a>
+                
+            
+        
+        </div>
+    </header>
+
+    <div class="gb-page-body">
+        <div class="gb-page-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        
+
+
+
+    
+    <div class="panel panel-default">
+        
+
+        <div class="list-group">
+            
+    
+        
+        <a href="../../" class="list-group-item ">
+        
+
+            
+
+            
+
+            Introduction
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Saleor Core
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="../ProjectStructure.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Project Structure
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Introduction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Payment
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="PaymentApp.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            PaymentApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="CheckoutApp.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            CheckoutApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Transaction.html" class="list-group-item active">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Transaction
+
+        
+        </a>
+        
+
+        
+    
+
+        
+    
+
+        
+    
+        
+        <a href="../../SaleorDashboard/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Dashboard
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../../SaleorFrontend/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Frontend
+
+        
+        </a>
+        
+
+        
+    
+
+        </div>
+    </div>
+    
+
+
+
+                    </div>
+                    <div class="col-md-9">
+                        
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                            
+                            <div class="gb-markdown book-page-inner">
+                                <p><a href="https://docs.saleor.io/docs/3.x/developer/payments#reporting-action-for-transactioggn" target="_blank">&#xC6D0;&#xBCF8;&#xC740; &#xC5EC;&#xAE30; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</a></p>
+<h2 id="&#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0;-&#xB300;&#xD55C;-&#xC791;&#xC5C5;-&#xBCF4;&#xACE0;">&#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0; &#xB300;&#xD55C; &#xC791;&#xC5C5; &#xBCF4;&#xACE0;</h2>
+<p>transactionEventReport&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBCF4;&#xACE0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC0C8;&#xB86D;&#xAC8C; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xAE08;&#xC561;&#xC744; &#xC7AC;&#xACC4;&#xC0B0;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; &#xC694;&#xCCAD;&#xB41C; &#xC791;&#xC5C5;&#xC744; &#xBE44;&#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAC70;&#xB098; &#xACB0;&#xC81C; &#xC81C;&#xACF5;&#xC790; &#xCE21;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD55C; &#xBCC0;&#xACBD; &#xC0AC;&#xD56D;&#xC744; &#xBCF4;&#xACE0;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC778;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>id: &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; ID&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>type: &#xBCF4;&#xACE0;&#xB41C; &#xC791;&#xC5C5;&#xC758; &#xC720;&#xD615;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>amount: &#xBCF4;&#xACE0;&#xB41C; &#xC791;&#xC5C5;&#xC758; &#xAE08;&#xC561;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>pspReference: &#xC791;&#xC5C5;&#xC5D0; &#xD560;&#xB2F9;&#xB41C; &#xCC38;&#xC870;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>time: &#xC791;&#xC5C5;&#xC758; &#xC2DC;&#xAC04;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>externalUrl: &#xC791;&#xC5C5; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xAC00; &#xC788;&#xB294; &#xACB0;&#xC81C; &#xC81C;&#xACF5;&#xC790; &#xD398;&#xC774;&#xC9C0;&#xB85C; &#xC0AC;&#xC6A9;&#xC790;&#xB97C; &#xB9AC;&#xB514;&#xB809;&#xC158;&#xD560; &#xC218; &#xC788;&#xB294; URL&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>message: &#xC791;&#xC5C5;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xBA54;&#xC2DC;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>availableActions: &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0; &#xB300;&#xD574; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC791;&#xC5C5; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<blockquote>
+<p>transactionEventReport&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xC18C;&#xC720;&#xC790;&#xB9CC; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC18C;&#xC720;&#xC790;&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xC0DD;&#xC131;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xB610;&#xB294; &#xC571;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; transactionEventReport &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC8FC;&#xC5B4;&#xC9C4; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0; &#xB300;&#xD574; &#xBC1C;&#xC0DD;&#xD55C; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBCF4;&#xACE0;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. &#xBCF4;&#xACE0;&#xC11C;&#xB294; &#xC131;&#xACF5;&#xC801;&#xC778; &#xCDA9;&#xC804; &#xC791;&#xC5C5;&#xC774;&#xBA70;, &#xAE08;&#xC561;&#xC740; 20&#xC785;&#xB2C8;&#xB2E4;. &#xD1B5;&#xD654;&#xB294; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0; &#xC120;&#xC5B8;&#xB41C; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;. &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC5D0; &#xB300;&#xD574; &#xC9C4;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC791;&#xC5C5;&#xC740; REFUND&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xACF5;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB294; &#xC7AC;&#xACC4;&#xC0B0; &#xACFC;&#xC815;&#xC5D0; &#xD3EC;&#xD568;&#xB420; &#xC0C8;&#xB85C;&#xC6B4; TransactionEvent &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-graphql">mutation TransactionEventReport {
+  transactionEventReport(
+    id: &quot;VHJhbnNhY3Rpb25JdGVtOjE=&quot;
+    type: CHARGE_SUCCESS
+    amount: 20
+    pspReference: &quot;psp-123&quot;
+    time: &quot;2022-01-01&quot;
+    externalUrl: &quot;https://saleor.io/event-details/123&quot;
+    message: &quot;Charge completed&quot;
+    availableActions: [REFUND]
+  ) {
+    errors {
+      field
+      code
+    }
+    alreadyProcessed
+    transaction {
+      id
+    }
+    transactionEvent {
+      id
+    }
+  }
+}
+</code></pre>
+<p>&#xC751;&#xB2F5;&#xC5D0;&#xC11C; Saleor&#xB294; &#xB2E4;&#xC74C;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<ul>
+<li>alreadyProcessesed - &#xBCF4;&#xACE0;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC774;&#xC804;&#xC5D0; &#xCC98;&#xB9AC;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC74C;&#xC744; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;. &#xC785;&#xB825; &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xB41C; &#xAC83;&#xACFC; &#xB3D9;&#xC77C;&#xD55C; pspReference, &#xAE08;&#xC561; &#xBC0F; &#xC720;&#xD615;&#xC744; &#xAC00;&#xC9C4; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC788;&#xC73C;&#xBA74; Saleor&#xB294; &#xC0C8;&#xB85C;&#xC6B4; &#xAC83;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xADF8;&#xAC83;&#xC744; &#xBC18;&#xD658;&#xD558;&#xACE0; &#xD50C;&#xB798;&#xADF8;&#xAC00; true&#xB85C; &#xC124;&#xC815;&#xB429;&#xB2C8;&#xB2E4;. &#xC81C;&#xACF5;&#xB41C; pspReference &#xBC0F; &#xC720;&#xD615;&#xC774; &#xC774;&#xBBF8; &#xBCF4;&#xACE0;&#xB418;&#xC5C8;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xAE08;&#xC561;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB41C; &#xACBD;&#xC6B0;, &#xCF54;&#xB4DC;&#xAC00; INCORRECT_DETAILS&#xC778; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>transaction - &#xC218;&#xC2E0;&#xB41C; &#xBCF4;&#xACE0;&#xC11C;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB41C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>transactionEvent - &#xC218;&#xC2E0;&#xB41C; &#xBCF4;&#xACE0;&#xC11C;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; TransactionEvent&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<blockquote>
+<p>transactionRequestAction&#xC744; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xC694;&#xCCAD; &#xC720;&#xD615; &#xC911; &#xD558;&#xB098;(AUTHORIZATION_REQUEST, CHARGE_REQUEST, REFUND_REQUEST, CANCEL_REQUEST), &#xAE08;&#xC561;, &#xC18C;&#xC720;&#xC790;(User &#xB610;&#xB294; App)&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; TransactionEvent&#xAC00; &#xC0DD;&#xC131;&#xB429;&#xB2C8;&#xB2E4;. Saleor&#xB294; TRANSACTION_CHARGE_REQUESTED, TRANSACTION_CANCELATION_REQUESTED, TRANSACTION_REFUND_REQUESTED&#xC5D0; &#xB300;&#xD55C; &#xB3D9;&#xAE30; &#xC6F9;&#xD6C5;&#xC744; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC751;&#xB2F5;&#xC5D0;&#xB294; &#xC801;&#xC5B4;&#xB3C4; &#xC561;&#xC158;&#xC758; pspReference&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. pspReference&#xB294; &#xC774;&#xC804;&#xC5D0; &#xC0DD;&#xC131;&#xB41C; _REQUEST &#xC720;&#xD615;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0; &#xBC30;&#xCE58;&#xB429;&#xB2C8;&#xB2E4;. &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC751;&#xB2F5;&#xC5D0; &#xC644;&#xB8CC;&#xB41C; &#xC561;&#xC158;&#xC758; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xB97C; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h5 id="&#xBE44;&#xB3D9;&#xAE30;&#xC2DD;-&#xC561;&#xC158;-&#xCC98;&#xB9AC;">&#xBE44;&#xB3D9;&#xAE30;&#xC2DD; &#xC561;&#xC158; &#xCC98;&#xB9AC;</h5>
+<p>&#xC561;&#xC158;&#xC774; &#xACB0;&#xC81C; &#xC81C;&#xACF5; &#xC5C5;&#xCCB4; &#xCE21;&#xC5D0;&#xC11C; &#xBE44;&#xB3D9;&#xAE30;&#xC2DD;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xACBD;&#xC6B0;, &#xC571;&#xC740; &#xACB0;&#xC81C; &#xC81C;&#xACF5; &#xC5C5;&#xCCB4;&#xB85C;&#xBD80;&#xD130; &#xC6F9;&#xD6C5; &#xC54C;&#xB9BC;&#xC744; &#xBC1B;&#xC73C;&#xBA74; transactionActionRequest &#xBCC0;&#xC774;&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="&#xB3D9;&#xAE30;&#xC2DD;-&#xC561;&#xC158;-&#xCC98;&#xB9AC;">&#xB3D9;&#xAE30;&#xC2DD; &#xC561;&#xC158; &#xCC98;&#xB9AC;</h5>
+<p>&#xC571;&#xC740; &#xC694;&#xCCAD;&#xB41C; &#xC561;&#xC158;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xC989;&#xC2DC; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC571;&#xC740; &#xC218;&#xC2E0;&#xD55C; Saleor &#xC6F9;&#xD6C5;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xC561;&#xC158;&#xC758; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xC6F9;&#xD6C5; &#xC774;&#xBCA4;&#xD2B8;&#xB294; &#xC751;&#xB2F5;&#xC5D0; &#xC561;&#xC158; &#xC138;&#xBD80; &#xC815;&#xBCF4;&#xB97C; &#xC218;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;: TRANSACTION_CHARGE_REQUESTED, TRANSACTION_CANCELATION_REQUESTED, TRANSACTION_REFUND_REQUESTED.</p>
+<p>&#xC571;&#xC774; Saleor &#xB300;&#xC2DC;&#xBCF4;&#xB4DC; &#xCE21;&#xC758; &#xC9C1;&#xC6D0; &#xC0AC;&#xC6A9;&#xC790; &#xB610;&#xB294; &#xC571;&#xC5D0; &#xC758;&#xD574; &#xD2B8;&#xB9AC;&#xAC70;&#xB41C; &#xACB0;&#xC81C; &#xC694;&#xCCAD; &#xC561;&#xC158;(&#xCDA9;&#xC804;, &#xD658;&#xBD88; &#xB610;&#xB294; &#xCDE8;&#xC18C;&#xC640; &#xAC19;&#xC740;)&#xB3C4; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xBA74;, &#xC571;&#xC774; transaction-action-request &#xC6F9;&#xD6C5;&#xC744; &#xAD6C;&#xB3C5;&#xD558;&#xB3C4;&#xB85D; &#xD655;&#xC778;&#xD558;&#xC138;&#xC694;.</p>
+<h2 id="&#xAC70;&#xB798;-&#xAE08;&#xC561;&#xC758;-&#xC7AC;&#xACC4;&#xC0B0;">&#xAC70;&#xB798; &#xAE08;&#xC561;&#xC758; &#xC7AC;&#xACC4;&#xC0B0;</h2>
+<p>&#xC7AC;&#xACC4;&#xC0B0;&#xC740; transactionEventReport, transactionInitialize, transactionProcess &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xB418;&#xB294; TransactionEventTypeEnum&#xC758; &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;. &#xC6F9;&#xD6C5; &#xC751;&#xB2F5;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<h4 id="&#xC774;&#xBCA4;&#xD2B8;-&#xC720;&#xD615;-&#xC124;&#xBA85;">&#xC774;&#xBCA4;&#xD2B8; &#xC720;&#xD615; &#xC124;&#xBA85;</h4>
+<h5 id="authorizationsuccess">AUTHORIZATION_SUCCESS</h5>
+<p>Saleor&#xB294; &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC744; transaction.authorizedAmount&#xC5D0; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. AUTHORIZATION_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; AUTHORIZATION_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.authorizePendingAmount&#xB294; AUTHORIZATION_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xB2E8;&#xC77C; &#xAC70;&#xB798;&#xC5D0; &#xB300;&#xD574; &#xB450; &#xAC1C; &#xC774;&#xC0C1;&#xC758; &#xC131;&#xACF5;&#xC801;&#xC778; &#xC778;&#xC99D;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xC694;&#xCCAD; &#xC774;&#xD6C4;&#xC758; &#xBAA8;&#xB4E0; &#xC131;&#xACF5; &#xC694;&#xCCAD;&#xC740; &#xC608;&#xC678;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. AUTHORIZATION_ADJUSTMENT&#xC740; transaction.authorizedAmount&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;</p>
+<blockquote>
+<p>AUTHORIZATION_SUCCESS&#xC640; AUTHORIZATION_FAILURE&#xAC00; &#xB3D9;&#xC77C;&#xD55C; pspReference&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xACBD;&#xC6B0;, transaction.authorizedAmount&#xC758; &#xC7AC;&#xACC4;&#xC0B0;&#xC740; AUTHORIZATION_SUCCESS&#xAC00; &#xC774;&#xC804; &#xAC83;&#xC77C; &#xB54C; AUTHORIZATION_SUCCESS&#xC758; &#xAE08;&#xC561;&#xC744; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h5 id="authorizationfailure">AUTHORIZATION_FAILURE</h5>
+<p>AUTHORIZATION_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; AUTHORIZATION_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.authorizePendingAmount&#xB294; AUTHORIZATION_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; AUTHORIZATION_REQUEST&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC2E4;&#xD328; &#xC774;&#xBCA4;&#xD2B8;&#xB294; transactionItem &#xC561;&#xC158;&#xC758; &#xAE30;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h5 id="authorizationadjustment">AUTHORIZATION_ADJUSTMENT</h5>
+<p>Saleor&#xB294; &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC744; transaction.authorizedAmount&#xC5D0; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="chargesuccess">CHARGE_SUCCESS</h5>
+<p>&#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC744; transaction.chargedAmount&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xD638;&#xCD9C;&#xB9C8;&#xB2E4; &#xAE30;&#xC874; transaction.chargedAmount&#xC5D0; &#xAE08;&#xC561;&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4; (transaction.chargedAmount += amount). CHARGE_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; CHARGE_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.chargePendingAmount&#xB294; CHARGE_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; CHARGE_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC774; transaction.authorizedAmount&#xB97C; &#xC904;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>CHARGE_SUCCESS&#xC640; CHARGE_FAILURE&#xAC00; &#xB3D9;&#xC77C;&#xD55C; pspReference&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xACBD;&#xC6B0;, transaction.chargedAmount&#xC758; &#xC7AC;&#xACC4;&#xC0B0;&#xC740; CHARGE_SUCCESS&#xAC00; &#xC774;&#xC804; &#xAC83;&#xC77C; &#xB54C; CHARGE_SUCCESS&#xC758; &#xAE08;&#xC561;&#xC744; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h5 id="chargefailure">CHARGE_FAILURE</h5>
+<p>CHARGE_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; CHARGE_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.chargePendingAmount&#xB294; CHARGE_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; CHARGE_REQUEST&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC2E4;&#xD328; &#xC774;&#xBCA4;&#xD2B8;&#xB294; transactionItem &#xC561;&#xC158;&#xC758; &#xAE30;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h5 id="chargeback">CHARGE_BACK</h5>
+<p>&#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC740; transaction.chargedAmount&#xB97C; &#xC904;&#xC774;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4; (transaction.chargedAmount -= amount).</p>
+<h5 id="refundsuccess">REFUND_SUCCESS</h5>
+<p>&#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC744; transaction.refundedAmount&#xC5D0; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C; &#xD638;&#xCD9C;&#xB9C8;&#xB2E4; &#xAE30;&#xC874; transaction.refundedAmount&#xC5D0; &#xAE08;&#xC561;&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4; (transaction.refundedAmount += amount). REFUND_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; REFUND_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.refundPendingAmount&#xB294; REFUND_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; REFUND_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC774; transaction.chargedAmount&#xB97C; &#xC904;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>REFUND_SUCCESS&#xC640; REFUND_FAILURE&#xAC00; &#xB3D9;&#xC77C;&#xD55C; pspReference&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xACBD;&#xC6B0;, transaction.refundedAmount&#xC758; &#xC7AC;&#xACC4;&#xC0B0;&#xC740; REFUND_SUCCESS&#xAC00; &#xC774;&#xC804; &#xAC83;&#xC77C; &#xB54C; REFUND_SUCCESS&#xC758; &#xAE08;&#xC561;&#xC744; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h5 id="refundfailure">REFUND_FAILURE</h5>
+<p>REFUND_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; REFUND_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.refundPendingAmount&#xB294; REFUND_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; REFUND_REQUEST&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC2E4;&#xD328; &#xC774;&#xBCA4;&#xD2B8;&#xB294; transactionItem &#xC561;&#xC158;&#xC758; &#xAE30;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h5 id="refundreverse">REFUND_REVERSE</h5>
+<p>&#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC740; transaction.refundedAmount&#xB97C; &#xC904;&#xC774;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4; (transaction.refundedAmount -= amount). &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC740; transaction.chargedAmount&#xB97C; &#xC99D;&#xAC00;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
+<h5 id="cancelsuccess">CANCEL_SUCCESS</h5>
+<p>&#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC774; transaction.canceledAmount&#xC5D0; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4; (transaction.canceledAmount += amount). CANCEL_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; CANCEL_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.cancelPendingAmount&#xB294; CANCEL_SUCCESS &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; CANCEL_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC81C;&#xACF5;&#xB41C; &#xAE08;&#xC561;&#xC774; transaction.authorizedAmount&#xB97C; &#xC904;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>CANCEL_SUCCESS&#xC640; CANCEL_FAILURE&#xAC00; &#xB3D9;&#xC77C;&#xD55C; pspReference&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;&#xB97C; &#xBC1C;&#xACAC;&#xD560; &#xACBD;&#xC6B0;, transaction.canceledAmount&#xC758; &#xC7AC;&#xACC4;&#xC0B0;&#xC740; CANCEL_SUCCESS&#xAC00; &#xC774;&#xC804; &#xAC83;&#xC77C; &#xB54C; CANCEL_SUCCESS&#xC758; &#xAE08;&#xC561;&#xC744; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h5 id="cancelfailure">CANCEL_FAILURE</h5>
+<p>CANCEL_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xAC00; pspReference&#xC5D0; &#xC758;&#xD574; CANCEL_REQUEST &#xC774;&#xBCA4;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB2E4;&#xBA74;, transactionItem.cancelPendingAmount&#xB294; CANCEL_FAILURE &#xC774;&#xBCA4;&#xD2B8;&#xC5D0;&#xC11C; &#xBCF4;&#xACE0;&#xB41C; &#xAE08;&#xC561;&#xB9CC;&#xD07C; &#xAC10;&#xC18C;&#xB429;&#xB2C8;&#xB2E4;. &#xAD00;&#xB828;&#xB41C; CANCEL_REQUEST&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC2E4;&#xD328; &#xC774;&#xBCA4;&#xD2B8;&#xB294; transactionItem &#xC561;&#xC158;&#xC758; &#xAE30;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370;&#xB9CC; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+
+                            </div>
+                            
+                        
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="gb-page-footer">
+        <div class="container">
+            <ul class="menu">
+                <li class="pull-right">
+                    <span class="service-info">Copyright GitBook 2023</span>
+                </li>
+                <li>
+                    <a href="#">Return to the top</a>
+                </li>
+                <li>
+                    <a href="#">Updated Apr 20th 23</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script src="../../gitbook/gitbook.js"></script>
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"description":"ransactionEventReport는 새로운 트랜잭션 이벤트를 보고하는 데 사용됩니다. 새롭게 생성된 이벤트는 트랜잭션 금액을 재계산하는 데 사용됩니다. 이 뮤테이션은 요청된 작업을 비동기적으로 처리하거나 결제 제공자 측에서 발생한 변경 사항을 보고하는 경우에 사용해야 합니다.","title":"Transaction","level":"1.2.2.3","depth":3,"next":{"title":"Saleor Dashboard","level":"1.3","depth":1,"path":"SaleorDashboard/README.md","ref":"SaleorDashboard/README.md","articles":[{"title":"Project Structure","level":"1.3.1","depth":2,"path":"SaleorDashboard/ProjectStructure.md","ref":"SaleorDashboard/ProjectStructure.md","articles":[]}]},"previous":{"title":"CheckoutApp","level":"1.2.2.2","depth":3,"path":"SaleorCore/Payment/CheckoutApp.md","ref":"SaleorCore/Payment/CheckoutApp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-official"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-official":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SaleorCore/Payment/Transaction.md","mtime":"2023-04-20T09:03:11.801Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-20T09:04:04.131Z"},"basePath":"../..","book":{"language":""}});
+})();
+</script>
+
+        
+    </body>
+</html>
+

@@ -6,7 +6,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>Saleor Core · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
+        <meta name="description" content="saleor platform">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -169,6 +169,26 @@
 
         
     
+        
+        <a href="Payment/Introduction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Payment
+
+        
+        </a>
+        
+
+        
+    
 
         
     
@@ -223,7 +243,181 @@
     
                             
                             <div class="gb-markdown book-page-inner">
-                                <h1 id="this-is-saleor-core">THIS IS SALEOR CORE</h1>
+                                <p><img src="https://user-images.githubusercontent.com/249912/71523206-4e45f800-28c8-11ea-84ba-345a9bfc998a.png" alt="Saleor Platform"></p>
+<div align="center">
+  <h1 id="saleor-platform">Saleor Platform</h1>
+</div>
+
+<div align="center">
+  <p>Run all Saleor services from one repository.</p>
+</div>
+
+<div align="center">
+  <a href="https://saleor.io/" target="_blank">&#x1F3E0; Website</a>
+  <span> &#x2022; </span>
+  <a href="https://docs.saleor.io/docs/3.x/" target="_blank">&#x1F4DA; Docs</a>
+  <span> &#x2022; </span>
+  <a href="https://saleor.io/blog/" target="_blank">&#x1F4F0; Blog</a>
+  <span> &#x2022; </span>
+  <a href="https://twitter.com/getsaleor" target="_blank">&#x1F426; Twitter</a>
+</div>
+
+<div align="center">
+  <a href="https://githubbox.com/saleor/saleor-platform" target="_blank">&#x1F50E; Explore Code</a>
+</div>
+
+<h2 id="about">About</h2>
+<h3 id="what-is-saleor-platform">What is Saleor Platform?</h3>
+<p>Saleor Platform is the easiest way to start local development with all the major Saleor services:</p>
+<ul>
+<li><a href="https://github.com/saleor/saleor" target="_blank">Core GraphQL API</a></li>
+<li><a href="https://github.com/saleor/saleor-dashboard" target="_blank">Dashboard</a></li>
+<li><a href="https://github.com/saleor/react-storefront" target="_blank">Storefront with Checkout</a></li>
+</ul>
+<p><em>Keep in mind this repository is for local development only and is not meant to be deployed in any production environment! If you&apos;re not a developer and just want to try out Saleor you can check our <a href="https://demo.saleor.io/" target="_blank">live demo</a>.</em></p>
+<h3 id="breaking-changes">Breaking changes</h3>
+<p>This project contains several projects that are connected. The <code>main</code> branch is always stable, but if modules were updated individually, it&apos;s possible they will not work correctly.</p>
+<p>In case of problems, fetching new saleor-platform is recommended. If local repository must be kept, consider updating to commit hashes that are pointed from <code>main</code> branch of saleor-platform.</p>
+<p>To fetch fresh repository, follow <a href="#how-to-clone-the-repository">section below</a></p>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li><a href="https://docs.docker.com/install/" target="_blank">Docker</a></li>
+<li><a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose</a></li>
+</ol>
+<h2 id="how-to-clone-the-repository">How to clone the repository?</h2>
+<p>To clone the repository, run the following command</p>
+<pre><code>git clone https://github.com/saleor/saleor-platform.git --recursive --jobs 3
+</code></pre><h2 id="how-to-run-it">How to run it?</h2>
+<ol>
+<li><p>We are using shared folders to enable live code reloading. Without this, Docker Compose will not start:</p>
+<ul>
+<li>Windows/MacOS: Add the cloned <code>saleor-platform</code> directory to Docker shared directories (Preferences -&gt; Resources -&gt; File sharing).</li>
+<li>Windows/MacOS: Make sure that in Docker preferences you have dedicated at least 5 GB of memory (Preferences -&gt; Resources -&gt; Advanced).</li>
+<li>Linux: No action is required, sharing is already enabled and memory for the Docker engine is not limited.</li>
+</ul>
+</li>
+<li><p>Go to the cloned directory:</p>
+<pre><code class="lang-shell">cd saleor-platform
+</code></pre>
+</li>
+<li><p>Build the application:</p>
+<pre><code class="lang-shell">docker-compose build
+</code></pre>
+</li>
+<li><p>Apply Django migrations:</p>
+<pre><code class="lang-shell">docker-compose run --rm api python3 manage.py migrate
+</code></pre>
+</li>
+<li><p>Collect static files:</p>
+<pre><code class="lang-shell">docker-compose run --rm api python3 manage.py collectstatic --noinput
+</code></pre>
+</li>
+<li><p>Populate the database with example data and create the admin user:</p>
+<pre><code class="lang-shell">docker-compose run --rm api python3 manage.py populatedb --createsuperuser
+</code></pre>
+<p><em>Note that <code>--createsuperuser</code> argument creates an admin account for <code>admin@example.com</code> with the password set to <code>admin</code>.</em></p>
+</li>
+<li><p>Run the application:</p>
+<pre><code class="lang-shell">docker-compose up
+</code></pre>
+<p><em>Both Storefront and Dashboard are quite big frontend projects and it might take up to a few minutes for them to compile depending on your CPU. If nothing shows up on port 3001 or 9000, please wait until <code>Compiled successfully</code> shows in the console output.</em></p>
+</li>
+</ol>
+<h2 id="where-is-the-application-running">Where is the application running?</h2>
+<ul>
+<li>Saleor Core (API) - <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></li>
+<li>Saleor React Storefront - <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+<li>Saleor App Checkout - <a href="http://localhost:3001" target="_blank">http://localhost:3001</a></li>
+<li>Saleor Dashboard - <a href="http://localhost:9000" target="_blank">http://localhost:9000</a></li>
+<li>Jaeger UI (APM) - <a href="http://localhost:16686" target="_blank">http://localhost:16686</a></li>
+<li>Mailhog (Test email interface) - <a href="http://localhost:8025" target="_blank">http://localhost:8025</a></li>
+</ul>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<ul>
+<li><a href="#how-to-solve-issues-with-lack-of-available-space-or-build-errors-after-an-update">How to solve issues with lack of available space or build errors after an update</a></li>
+<li><a href="#how-to-run-application-parts">How to run application parts?</a></li>
+<li><a href="#how-to-update-the-subprojects-to-the-newest-versions">How to update the subprojects to the newest versions?</a></li>
+</ul>
+<h2 id="how-to-update-the-subprojects-to-the-newest-versions">How to update the subprojects to the newest versions?</h2>
+<p>This repository contains the newest stable versions.
+When a new release is published, pull a new version of this repository.
+In order to update all the subprojects to their newest versions, run:</p>
+<pre><code class="lang-shell">git submodule update --remote
+</code></pre>
+<p>You can find the latest version of Saleor, Storefront and Dashboard in their individual repositories:</p>
+<ul>
+<li><a href="https://github.com/saleor/saleor" target="_blank">https://github.com/saleor/saleor</a></li>
+<li><a href="https://github.com/saleor/saleor-dashboard" target="_blank">https://github.com/saleor/saleor-dashboard</a></li>
+<li><a href="https://github.com/saleor/react-storefront" target="_blank">https://github.com/saleor/react-storefront</a></li>
+</ul>
+<h2 id="how-to-solve-issues-with-lack-of-available-space-or-build-errors-after-an-update">How to solve issues with lack of available space or build errors after an update</h2>
+<p>Most of the time both issues can be solved by cleaning up space taken by old containers. After that, we build again whole platform. </p>
+<ol>
+<li><p>Make sure docker stack is not running</p>
+<pre><code class="lang-shell">docker-compose stop
+</code></pre>
+</li>
+<li><p>Remove existing volumes</p>
+</li>
+</ol>
+<p><strong>Warning!</strong> Proceeding will remove also your database container! If you need existing data, please remove only services that cause problems! <a href="https://docs.docker.com/compose/reference/rm/" target="_blank">https://docs.docker.com/compose/reference/rm/</a></p>
+<pre><code class="lang-shell">docker-compose rm
+</code></pre>
+<ol>
+<li><p>Build fresh containers </p>
+<pre><code class="lang-shell">docker-compose build
+</code></pre>
+</li>
+<li><p>Now you can run a fresh environment using commands from <code>How to run it?</code> section. Done!</p>
+</li>
+</ol>
+<h3 id="still-no-available-space">Still no available space</h3>
+<p>If you are getting issues with lack of available space, consider pruning your docker cache:</p>
+<p><strong>Warning!</strong> This will remove:</p>
+<ul>
+<li>all stopped containers</li>
+<li>all networks not used by at least one container</li>
+<li>all dangling images</li>
+<li><p>all dangling build cache </p>
+<p>More info: <a href="https://docs.docker.com/engine/reference/commandline/system_prune/" target="_blank">https://docs.docker.com/engine/reference/commandline/system_prune/</a></p>
+</li>
+</ul>
+<details><summary>I&apos;ve been warned</summary>
+<p>
+
+```shell
+docker system prune
+```
+
+</p>
+</details>
+
+<h3 id="issues-with-migrations-after-changing-the-versions---resetting-the-database">Issues with migrations after changing the versions - resetting the database</h3>
+<p>Please submit an issue ticket if you spot issues with database migrations during the version update. </p>
+<p>When testing developer releases or making local changes, you might end up in a state where you would like to reset the database completely. Since its state is persisted in the mounted volume, you&apos;ll need to use a dedicated command.</p>
+<p><strong>Warning!</strong> This command will remove all data already stored in the database.</p>
+<details><summary>I&apos;ve been warned</summary>
+<p>
+
+```shell
+docker-compose down --volumes db
+```
+
+</p>
+</details>
+
+<h2 id="how-to-run-application-parts">How to run application parts?</h2>
+<ul>
+<li><code>docker-compose up api worker</code> for backend services only</li>
+<li><code>docker-compose up</code> for backend and frontend services</li>
+</ul>
+<h2 id="feedback">Feedback</h2>
+<p>If you have any questions or feedback, do not hesitate to contact us via <a href="https://github.com/saleor/saleor/discussions" target="_blank">GitHub Discussions</a>.</p>
+<h2 id="license">License</h2>
+<p>Disclaimer: Everything you see here is open and free to use as long as you comply with the <a href="https://github.com/saleor/saleor-platform/blob/main/LICENSE" target="_blank">license</a>. There are no hidden charges. We promise to do our best to fix bugs and improve the code.</p>
+<p>Some situations do call for extra code; we can cover exotic use cases or build you a custom e-commerce appliance.</p>
+<h4 id="crafted-with-&#x2764;&#xFE0F;-by-saleor-commerce">Crafted with &#x2764;&#xFE0F; by <a href="https://saleor.io/" target="_blank">Saleor Commerce</a></h4>
+<p>hello@saleor.io</p>
 
                             </div>
                             
@@ -260,7 +454,7 @@
                     <a href="#">Return to the top</a>
                 </li>
                 <li>
-                    <a href="#">Updated Apr 13th 23</a>
+                    <a href="#">Updated Apr 20th 23</a>
                 </li>
             </ul>
         </div>
@@ -295,7 +489,7 @@
 
 <script>
 (function() {
-    gitbook.page.hasChanged({"page":{"title":"Saleor Core","level":"1.2","depth":1,"next":{"title":"Project Structure","level":"1.2.1","depth":2,"path":"SaleorCore/ProjectStructure.md","ref":"SaleorCore/ProjectStructure.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-official"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-official":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SaleorCore/README.md","mtime":"2023-04-13T10:27:14.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-19T09:13:05.895Z"},"basePath":"..","book":{"language":""}});
+    gitbook.page.hasChanged({"page":{"description":"saleor platform","title":"Saleor Core","level":"1.2","depth":1,"next":{"title":"Project Structure","level":"1.2.1","depth":2,"path":"SaleorCore/ProjectStructure.md","ref":"SaleorCore/ProjectStructure.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-official"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-official":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SaleorCore/README.md","mtime":"2023-04-20T08:58:45.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-20T09:04:04.131Z"},"basePath":"..","book":{"language":""}});
 })();
 </script>
 

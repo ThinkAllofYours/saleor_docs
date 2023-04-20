@@ -1,0 +1,586 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PaymentApp · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="saler Payment app 활용">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+
+    
+    <link rel="next" href="CheckoutApp.html" />
+    
+    
+    <link rel="prev" href="Introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="gb-page-wrapper">
+    <header class="gb-page-header">
+        <div class="container">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+
+            <a href="../.." class="logo">
+                <img src="../../gitbook/images/logo/128.png">
+                <h1></h1>
+            </a>
+
+            
+
+            
+                
+                <a href="CheckoutApp.html" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-right"></i>
+                </a>
+                
+                
+                <a href="Introduction.html" class="btn btn-link pull-right hidden-xs">
+                    <i class="octicon octicon-chevron-left"></i>
+                </a>
+                
+            
+        
+        </div>
+    </header>
+
+    <div class="gb-page-body">
+        <div class="gb-page-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        
+
+
+
+    
+    <div class="panel panel-default">
+        
+
+        <div class="list-group">
+            
+    
+        
+        <a href="../../" class="list-group-item ">
+        
+
+            
+
+            
+
+            Introduction
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Saleor Core
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="../ProjectStructure.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Project Structure
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Introduction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+            <i class="octicon octicon-chevron-down"></i>
+            
+
+            Payment
+
+        
+        </a>
+        
+
+        
+        
+    
+        
+        <a href="PaymentApp.html" class="list-group-item active">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            PaymentApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="CheckoutApp.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            CheckoutApp
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="Transaction.html" class="list-group-item ">
+        
+
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+            <i class="octicon octicon-chevron-down" style="opacity: 0"></i>
+            
+
+            
+
+            Transaction
+
+        
+        </a>
+        
+
+        
+    
+
+        
+    
+
+        
+    
+        
+        <a href="../../SaleorDashboard/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Dashboard
+
+        
+        </a>
+        
+
+        
+    
+        
+        <a href="../../SaleorFrontend/" class="list-group-item ">
+        
+
+            
+
+            
+            <i class="octicon octicon-chevron-right"></i>
+            
+
+            Saleor Frontend
+
+        
+        </a>
+        
+
+        
+    
+
+        </div>
+    </div>
+    
+
+
+
+                    </div>
+                    <div class="col-md-9">
+                        
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                            
+                            <div class="gb-markdown book-page-inner">
+                                <h2 id="&#xACB0;&#xC81C;-&#xC571;&#xC73C;&#xB85C;-&#xACB0;&#xC81C;-&#xCC98;&#xB9AC;&#xD558;&#xAE30;">&#xACB0;&#xC81C; &#xC571;&#xC73C;&#xB85C; &#xACB0;&#xC81C; &#xCC98;&#xB9AC;&#xD558;&#xAE30;</h2>
+<ul>
+<li>&#xC774; &#xC139;&#xC158;&#xC5D0;&#xC11C;&#xB294; &#xACB0;&#xC81C; &#xC571;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACB0;&#xC81C; &#xCC98;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xD750;&#xB984;&#xC744; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;. &#xC2A4;&#xD1A0;&#xC5B4;&#xD504;&#xB860;&#xD2B8;&#xC640; &#xACB0;&#xC81C; &#xC571; &#xAC04;&#xC758; &#xD1B5;&#xC2E0;&#xC740; Saleor&#xB97C; &#xD1B5;&#xD574; &#xC774;&#xB8E8;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;. </li>
+<li>&#xACB0;&#xC81C; &#xC571;&#xC758; &#xC751;&#xB2F5;&#xC5D0; &#xAE30;&#xBC18;&#xD558;&#xC5EC; Saleor&#xB294; &#xC801;&#xC808;&#xD55C; &#xC0C1;&#xD0DC;&#xB85C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xAC70;&#xB098; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p>&#xACB0;&#xC81C; &#xC571;&#xC744; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB824;&#xBA74; paymentGatewayInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. paymentGateways&#xC5D0; &#xC81C;&#xACF5;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB294; &#xACB0;&#xC81C; &#xC571;&#xC73C;&#xB85C; &#xC804;&#xC1A1;&#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7F0; &#xB2E4;&#xC74C; Saleor&#xB294; &#xAC01; &#xC571;&#xC5D0;&#xC11C; &#xBC1B;&#xC740; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xB2E8;&#xACC4;&#xB294; &#xACB0;&#xC81C; &#xC571;&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xCCB4;&#xD06C;&#xC544;&#xC6C3;&#xC5D0; &#xB300;&#xD574; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xACB0;&#xC81C; &#xC218;&#xB2E8;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB294; &#xB4F1;&#xC758; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC838;&#xC640;&#xC57C; &#xD560; &#xB54C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>paymentGatewayInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xB294; &#xB2E4;&#xC74C; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;:</p>
+</blockquote>
+<ol>
+<li>id - &#xCCB4;&#xD06C;&#xC544;&#xC6C3; &#xB610;&#xB294; &#xC8FC;&#xBB38;&#xC758; ID&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>amount - &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC694;&#xCCAD;&#xB41C; &#xAE08;&#xC561;&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;, &#xCCB4;&#xD06C;&#xC544;&#xC6C3;.total&#xACFC; &#xC774;&#xBBF8; &#xCC98;&#xB9AC;&#xB41C; &#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xAC04;&#xC758; &#xCC28;&#xC774;&#xAC00; &#xC571;&#xC73C;&#xB85C; &#xC804;&#xC1A1;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>paymentGateways - &#xCD08;&#xAE30;&#xD654;&#xD560; &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;, webhook PAYMENT_GATEWAY_INITIALIZE_SESSION&#xC5D0; &#xAC00;&#xC785;&#xD55C; &#xBAA8;&#xB4E0; &#xC571;&#xC774; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
+<li>paymentGateways.id - &#xCD08;&#xAE30;&#xD654;&#xD560; &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xC571;&#xC758; &#xC2DD;&#xBCC4;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>paymentGateway.data - &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xC5D0; &#xC804;&#xB2EC;&#xB420; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<blockquote>
+<p>paymentGatewayInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; &#xB2E4;&#xC74C; &#xC751;&#xB2F5;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;:</p>
+</blockquote>
+<ol>
+<li>gatewayConfigs - &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xACB0;&#xC81C; &#xC571; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>gatewayConfigs.id - &#xC571; &#xC2DD;&#xBCC4;&#xC790;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>gatewayConfigs.data - &#xC571;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xD55C; &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xB97C; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xB370;&#xC774;&#xD130;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>gatewayConfigs.errors - &#xD2B9;&#xC815; &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xC571;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xC624;&#xB958; &#xBAA9;&#xB85D;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li>errors - &#xBBA4;&#xD14C;&#xC774;&#xC158; &#xD638;&#xCD9C;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xC624;&#xB958;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<pre><code class="lang-graphql">mutation {
+  paymentGatewayInitialize(
+    id: &quot;Q2hlY2tvdXQ6ZmIxMzljMjgtYWY4OS00Mzk2LWEyMjgtZmM2ZDg0NGFhOWY3&quot;
+    amount: 100
+    paymentGateways: [
+      { id: &quot;payment.app&quot;, data: { details: { passed: &quot;to-app&quot; } } }
+    ]
+  ) {
+    gatewayConfigs {
+      id
+      data
+      errors {
+        field
+        message
+        code
+      }
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>response &#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-graphql">{
+  &quot;data&quot;: {
+    &quot;paymentGatewayInitialize&quot;: {
+      &quot;gatewayConfigs&quot;: [
+        {
+          &quot;id&quot;: &quot;payment.app&quot;,
+          &quot;data&quot;: {
+            &quot;json&quot;: &quot;data-returned-by-app&quot;
+          },
+          &quot;errors&quot;: []
+        }
+      ],
+      &quot;errors&quot;: []
+    }
+  }
+}
+</code></pre>
+<p>&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; PAYMENT_GATEWAY_INITIALIZE_SESSION &#xC6F9;&#xD6C5;&#xC744; &#xD2B8;&#xB9AC;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="&#xAC70;&#xB798;-&#xCD08;&#xAE30;&#xD654;">&#xAC70;&#xB798; &#xCD08;&#xAE30;&#xD654;</h4>
+<p>&#xACB0;&#xC81C; &#xCC98;&#xB9AC;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xB824;&#xBA74; transactionInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;. paymentGateways &#xD544;&#xB4DC;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xAC00; &#xACB0;&#xC81C; &#xC571;&#xC73C;&#xB85C; &#xC804;&#xC1A1;&#xB418;&#xBA70;, Saleor&#xB294; &#xC571;&#xC5D0;&#xC11C; &#xBC1B;&#xC740; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;. &#xACB0;&#xC81C; &#xC571;&#xC758; &#xC751;&#xB2F5;&#xC5D0; &#xB530;&#xB77C;, Saleor&#xB294; &#xC801;&#xC808;&#xD55C; &#xC0C1;&#xD0DC;&#xB85C; &#xAC70;&#xB798;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAC70;&#xB098; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="transactioninitialize-&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xB294;-&#xB2E4;&#xC74C;-&#xC778;&#xC218;&#xAC00;-&#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;">transactionInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xB294; &#xB2E4;&#xC74C; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;</h5>
+<ul>
+<li>id - &#xCCB4;&#xD06C;&#xC544;&#xC6C3; &#xB610;&#xB294; &#xC8FC;&#xBB38; ID.</li>
+<li>paymentGateway - &#xACB0;&#xC81C; &#xCC98;&#xB9AC;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;.</li>
+<li>paymentGateway.id - &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xC571;&#xC758; &#xC2DD;&#xBCC4;&#xC790;.</li>
+<li>paymentGateway.data - &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xB370;&#xC774;&#xD130;.</li>
+<li>action - &#xAC70;&#xB798;&#xC5D0; &#xB300;&#xD574; &#xD638;&#xCD9C;&#xB418;&#xB294; &#xC608;&#xC0C1; &#xC561;&#xC158;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; channel.defaultTransactionFlowStrategy&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; HANDLE_PAYMENTS &#xAD8C;&#xD55C;&#xC774; &#xC788;&#xB294; &#xC571;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>amount - &#xACB0;&#xC81C;&#xC5D0; &#xC694;&#xCCAD;&#xB41C; &#xAE08;&#xC561;. &#xC81C;&#xACF5;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;, checkout.total&#xACFC; &#xC774;&#xBBF8; &#xCC98;&#xB9AC;&#xB41C; &#xAC70;&#xB798; &#xAC04;&#xC758; &#xCC28;&#xC774;&#xAC00; &#xC804;&#xC1A1;&#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h5 id="transactioninitialize-&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740;-&#xB2E4;&#xC74C;-&#xC751;&#xB2F5;&#xC744;-&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;">transactionInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; &#xB2E4;&#xC74C; &#xC751;&#xB2F5;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;</h5>
+<ul>
+<li>transaction - &#xCD08;&#xAE30;&#xD654;&#xB41C; &#xAC70;&#xB798;.</li>
+<li>transactionEvent - &#xACB0;&#xC81C; &#xC571;&#xC5D0;&#xC11C; &#xBC1B;&#xC740; &#xC751;&#xB2F5;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;.</li>
+<li>data - &#xC571;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xB41C; &#xB370;&#xC774;&#xD130;.</li>
+<li>errors - &#xBBA4;&#xD14C;&#xC774;&#xC158; &#xD638;&#xCD9C;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xC624;&#xB958;.</li>
+</ul>
+<p>&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; TRANSACTION_INITIALIZE_SESSION &#xC6F9;&#xD6C5;&#xC744; &#xD2B8;&#xB9AC;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; transactionInitialize &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xACB0;&#xC81C; &#xCC98;&#xB9AC;&#xB97C; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-graphql">mutation TransactionInitialize {
+  transactionInitialize(
+    amount: 100
+    id: &quot;Q2hlY2tvdXQ6MzE3NDk5MjgtZDFkMC00NjdjLTgxNjktMGRiZGM4ZGJhMGZh&quot;
+    paymentGateway: { id: &quot;payment.app&quot;, data: { details: &quot;passed-to-app&quot; } }
+  ) {
+    transaction {
+      id
+    }
+    transactionEvent {
+      type
+      pspReference
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+</code></pre>
+<p>The response would look like this:</p>
+<pre><code class="lang-graphql">{
+  &quot;data&quot;: {
+    &quot;transactionInitialize&quot;: {
+      &quot;data&quot;: {
+        &quot;some-json&quot;: &quot;data&quot;
+      },
+      &quot;transaction&quot;: {
+        &quot;id&quot;: &quot;VHJhbnNhY3Rpb25JdGVtOjhhMzE1ODVlLWE1MTktNDVkMS1hNTFmLTYwZGZlNGRkM2FkNg&quot;
+      },
+      &quot;transactionEvent&quot;: {
+        &quot;type&quot;: &quot;CHARGE_SUCCESS&quot;,
+        &quot;pspReference&quot;: &quot;ppp-123&quot;
+      },
+      &quot;errors&quot;: []
+    }
+  }
+}
+</code></pre>
+<h4 id="&#xAC70;&#xB798;-&#xCC98;&#xB9AC;">&#xAC70;&#xB798; &#xCC98;&#xB9AC;</h4>
+<p>transactionInitialize &#xB610;&#xB294; transactionProcess&#xAC00; transactionEvent.type&#xC744; AUTHORIZATION_ACTION_REQUIRED &#xB610;&#xB294; CHARGE_ACTION_REQUIRED&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xBC18;&#xD658;&#xD558;&#xBA74; &#xACE0;&#xAC1D;&#xC758; &#xCD94;&#xAC00; &#xC870;&#xCE58;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xCD94;&#xAC00; &#xC870;&#xCE58;&#xC758; &#xACB0;&#xACFC;&#xB97C; &#xC571;&#xC5D0; &#xC81C;&#xACF5;&#xD558;&#xB824;&#xBA74; transactionProcess &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xD638;&#xCD9C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="transactionprocess-&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xB294;-&#xB2E4;&#xC74C;-&#xC778;&#xC218;&#xAC00;-&#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;">transactionProcess &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC5D0;&#xB294; &#xB2E4;&#xC74C; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;:</h5>
+<ul>
+<li>id - transactionInitialize&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xB41C; &#xAC70;&#xB798; ID.</li>
+<li>data - &#xACB0;&#xC81C; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xB370;&#xC774;&#xD130;.</li>
+</ul>
+<h5 id="transactionprocess-&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740;-&#xB2E4;&#xC74C;&#xC744;-&#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;">transactionProcess &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; &#xB2E4;&#xC74C;&#xC744; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;:</h5>
+<ul>
+<li>transaction - &#xCC98;&#xB9AC;&#xB41C; &#xAC70;&#xB798;.</li>
+<li>transactionEvent - &#xACB0;&#xC81C; &#xC571;&#xC5D0;&#xC11C; &#xBC1B;&#xC740; &#xC751;&#xB2F5;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;.</li>
+<li>data - &#xC571;&#xC5D0;&#xC11C; &#xBC18;&#xD658;&#xB41C; &#xB370;&#xC774;&#xD130;.</li>
+<li>errors - &#xBBA4;&#xD14C;&#xC774;&#xC158; &#xD638;&#xCD9C;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xC624;&#xB958;.</li>
+</ul>
+<p>&#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC740; TRANSACTION_PROCESS_SESSION &#xC6F9;&#xD6C5;&#xC744; &#xD2B8;&#xB9AC;&#xAC70;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C; &#xC608;&#xC81C;&#xB294; transactionProcess &#xBBA4;&#xD14C;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xACB0;&#xC81C;&#xB97C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-graphql">mutation TransactionInitialize {
+  transactionProcess(
+    id: &quot;VHJhbnNhY3Rpb25JdGVtOjhhMzE1ODVlLWE1MTktNDVkMS1hNTFmLTYwZGZlNGRkM2FkNg&quot;
+    data: { additional: { actions: &quot;details&quot; } }
+  ) {
+    transaction {
+      id
+    }
+    transactionEvent {
+      type
+      pspReference
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+</code></pre>
+<p>The response would look like this</p>
+<pre><code class="lang-graphql">{
+  &quot;data&quot;: {
+    &quot;transactionProcess&quot;: {
+      &quot;data&quot;: {
+        &quot;some-json&quot;: &quot;data&quot;
+      },
+      &quot;transaction&quot;: {
+        &quot;id&quot;: &quot;VHJhbnNhY3Rpb25JdGVtOjhhMzE1ODVlLWE1MTktNDVkMS1hNTFmLTYwZGZlNGRkM2FkNg&quot;
+      },
+      &quot;transactionEvent&quot;: {
+        &quot;type&quot;: &quot;CHARGE_SUCCESS&quot;,
+        &quot;pspReference&quot;: &quot;ppp-123&quot;
+      },
+      &quot;errors&quot;: []
+    }
+  }
+}
+</code></pre>
+<h5 id="&#xACB0;&#xC81C;&#xC758;-&#xD604;&#xC7AC;-&#xC0C1;&#xD0DC;&#xB294;-transactioneventtype&#xC758;-&#xAC12;&#xC5D0;-&#xB530;&#xB77C;-&#xACB0;&#xC815;&#xD560;-&#xC218;-&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;">&#xACB0;&#xC81C;&#xC758; &#xD604;&#xC7AC; &#xC0C1;&#xD0DC;&#xB294; transactionEvent.type&#xC758; &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xACB0;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</h5>
+<ul>
+<li>AUTHORIZATION_ACTION_REQUIRED &#xB610;&#xB294; CHARGE_ACTION_REQUIRED&#xB294; &#xACE0;&#xAC1D;&#xC774; &#xACB0;&#xC81C;&#xB97C; &#xC644;&#xB8CC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00; &#xC870;&#xCE58;&#xB97C; &#xC694;&#xAD6C;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;. action&#xC758; &#xACB0;&#xACFC;&#xB97C; &#xC571;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB824;&#xBA74; transactionProcess&#xB97C; &#xD638;&#xCD9C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>AUTHORIZATION_SUCCESS&#xB294; &#xC790;&#xAE08;&#xC774; &#xC2B9;&#xC778;&#xB418;&#xC5C8;&#xC74C;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>AUTHORIZATION_FAILURE&#xB294; &#xC778;&#xC99D;&#xC774; &#xC2E4;&#xD328;&#xD588;&#xC74C;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>AUTHORIZATION_REQUEST&#xB294; &#xC778;&#xC99D;&#xC774; &#xBCF4;&#xB958; &#xC911;&#xC778; &#xC0C1;&#xD0DC;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>CHARGE_SUCCESS&#xB294; &#xC790;&#xAE08;&#xC774; &#xCCAD;&#xAD6C;&#xB418;&#xC5C8;&#xC74C;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>CHARGE_FAILURE&#xB294; &#xCCAD;&#xAD6C;&#xAC00; &#xC2E4;&#xD328;&#xD588;&#xC74C;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+<li>CHARGE_REQUEST&#xB294; &#xCCAD;&#xAD6C;&#xAC00; &#xBCF4;&#xB958; &#xC911;&#xC778; &#xC0C1;&#xD0DC;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+
+                            </div>
+                            
+                        
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="gb-page-footer">
+        <div class="container">
+            <ul class="menu">
+                <li class="pull-right">
+                    <span class="service-info">Copyright GitBook 2023</span>
+                </li>
+                <li>
+                    <a href="#">Return to the top</a>
+                </li>
+                <li>
+                    <a href="#">Updated Apr 20th 23</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script src="../../gitbook/gitbook.js"></script>
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"description":"saler Payment app 활용","title":"PaymentApp","level":"1.2.2.1","depth":3,"next":{"title":"CheckoutApp","level":"1.2.2.2","depth":3,"path":"SaleorCore/Payment/CheckoutApp.md","ref":"SaleorCore/Payment/CheckoutApp.md","articles":[]},"previous":{"title":"Payment","level":"1.2.2","depth":2,"path":"SaleorCore/Payment/Introduction.md","ref":"SaleorCore/Payment/Introduction.md","articles":[{"title":"PaymentApp","level":"1.2.2.1","depth":3,"path":"SaleorCore/Payment/PaymentApp.md","ref":"SaleorCore/Payment/PaymentApp.md","articles":[]},{"title":"CheckoutApp","level":"1.2.2.2","depth":3,"path":"SaleorCore/Payment/CheckoutApp.md","ref":"SaleorCore/Payment/CheckoutApp.md","articles":[]},{"title":"Transaction","level":"1.2.2.3","depth":3,"path":"SaleorCore/Payment/Transaction.md","ref":"SaleorCore/Payment/Transaction.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["theme-official"],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-official":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SaleorCore/Payment/PaymentApp.md","mtime":"2023-04-20T09:03:45.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-20T09:04:04.131Z"},"basePath":"../..","book":{"language":""}});
+})();
+</script>
+
+        
+    </body>
+</html>
+
